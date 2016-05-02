@@ -3,14 +3,14 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Place search pagination</title>
-	
+    <title>Gas Station Finder</title>
+
     <link rel="stylesheet" type="text/css" href="css/myStyleSheet.css"> </link>
-	<script  type="text/javascript" src="js/mapJS.js"> </script>	
-        
+	  <script  type="text/javascript" src="js/mapJS.js"> </script>
+
   </head>
   <body>
-  
+
    <input id="pac-input" class="controls" type="text"
         placeholder="Enter a location">
     <div id="type-selector" class="controls">
@@ -22,7 +22,10 @@
       <ul id="places"></ul>
       <button id="more">More results</button>
     </div>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByyfkeO_3V5QR2rwdcP1uE2bi6rgO2ZW0&libraries=places&callback=initMap" async defer></script>
-	
+
+  <!-- calling google api script  -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByyfkeO_3V5QR2rwdcP1uE2bi6rgO2ZW0&libraries=places&callback=initLocate" async defer></script>
+  <!-- initLocate callback function defined in js/ mapJs.js  -->
+
   </body>
 </html>
