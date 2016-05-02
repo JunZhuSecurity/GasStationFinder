@@ -129,32 +129,32 @@
 
       for (var i = 0, place; place = places[i]; i++) {
 
-    		  last_places_count=i;
-              var image = {
-                url: place.icon,
-                size: new google.maps.Size(71, 71),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(17, 34),
-                scaledSize: new google.maps.Size(25, 25)
-          };
+    	last_places_count=i;
+        var image = {
+             url: place.icon,
+             size: new google.maps.Size(71, 71),
+             origin: new google.maps.Point(0, 0),
+             anchor: new google.maps.Point(17, 34),
+             scaledSize: new google.maps.Size(25, 25)
+        };
 
           /* Here im creating a marker
              so that wherever there is a gas station in that set radius
              a marker with the above charectaristics would pop up. */
 
-          marker[i] = new google.maps.Marker({
+        marker[i] = new google.maps.Marker({
                 map: map,
                 icon: image,
                 title: place.name,
                 position: place.geometry.location
-          });
+        });
 
 
           /* add click listner */
-    		  marker[i].addListener('click', function() {
+    	marker[i].addListener('click', function() {
 
-        		  var directionsDisplay0 = new google.maps.DirectionsRenderer;
-        		  directionsDisplay0.setMap(null);
+              var directionsDisplay0 = new google.maps.DirectionsRenderer;
+              directionsDisplay0.setMap(null);
               map.setZoom(18);
 
               map.setCenter(this.getPosition());
@@ -170,7 +170,7 @@
 
         placesList.innerHTML += '<li>' + place.name + '</li>';
 
-    	  google.maps.event.addListener(marker[i], 'click', function() {
+    	google.maps.event.addListener(marker[i], 'click', function() {
             infowindow.setContent(this.title);
             infowindow.open(map,this);
 
@@ -191,7 +191,7 @@
 
       directionsService.route({
 
-    	  origin: origin_place_id,
+    	origin: origin_place_id,
         destination: destination_place_id,
         travelMode: travel_mode
         }, function(response, status) {
