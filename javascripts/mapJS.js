@@ -13,7 +13,7 @@
   function initLocate(){
 
     /* prompt user a confirmation that he wants to share his/her location or not*/
-    var confirmation = confirm("Would you like to share your geolocation.");
+    var confirmation = confirm("Press OK to share your location.");
 
     if(confirmation == true){
 
@@ -143,8 +143,8 @@
 
       for (var i = 0, place; place = places[i]; i++) {
 
-    		  last_places_count=i;
-              var image = {
+    	  last_places_count=i;
+          var image = {
                 url: place.icon,
                 size: new google.maps.Size(71, 71),
                 origin: new google.maps.Point(0, 0),
@@ -166,10 +166,10 @@
 
 
           /* add click listner */
-    		  marker[i].addListener('click', function() {
+    	  marker[i].addListener('click', function() {
 
-        		  var directionsDisplay0 = new google.maps.DirectionsRenderer;
-        		  directionsDisplay0.setMap(null);
+              var directionsDisplay0 = new google.maps.DirectionsRenderer;
+              directionsDisplay0.setMap(null);
               map.setZoom(18);
 
               map.setCenter(this.getPosition());
@@ -200,7 +200,7 @@
   }
 
   /*  function for setting direction and show travel time  */
-	function route(origin_place_id, destination_place_id, travel_mode) {
+  function route(origin_place_id, destination_place_id, travel_mode) {
 
       if (!origin_place_id || !destination_place_id) {
         return;
@@ -208,7 +208,7 @@
 
       directionsService.route({
 
-    	  origin: origin_place_id,
+    	origin: origin_place_id,
         destination: destination_place_id,
         travelMode: travel_mode
         }, function(response, status) {
@@ -217,7 +217,7 @@
 
             /* set direction on map */
             directionsDisplay.setDirections(response);
-    		    directionsDisplay.setMap(map);
+    	    directionsDisplay.setMap(map);
 
             /* add traffic layer */
             var trafficLayer = new google.maps.TrafficLayer();
